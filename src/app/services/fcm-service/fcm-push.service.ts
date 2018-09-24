@@ -10,8 +10,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class FcmPushService {
-
-  messaging = firebase.messaging();
+  messaging;
   currentMessage = new BehaviorSubject(null);
 
   constructor(
@@ -39,10 +38,13 @@ export class FcmPushService {
    * @param userId userId
    */
   requestPermission(userId) {
+    this.messaging = firebase.messaging();
     this.messaging.requestPermission()
       .then(() => {
         console.log('notification permission granted.');
         return firebase.messaging().getToken();
+      }).catch((err) => {
+        console.log('Unable to get permission to notify.', err);
       })
       .then(token => {
         console.log(token);

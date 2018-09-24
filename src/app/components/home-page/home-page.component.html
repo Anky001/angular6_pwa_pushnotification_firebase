@@ -1,0 +1,13 @@
+<div class="content-parent">
+  <div class="content">
+    <h1>
+      Chuck Jokes!
+    </h1>
+    <ng-container *ngIf="joke">
+      <p>
+        {{ joke.value }}
+      </p>
+      <!-- {{ message | async | json }} -->
+    </ng-container>
+  </div>
+</div>
