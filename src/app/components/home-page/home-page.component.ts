@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SwUpdate } from '@angular/service-worker';
 
-import { ApiService } from '../../services/api-service/api-service.service';
 import { FcmPushService } from '../../services/fcm-service/fcm-push.service';
 
 
@@ -11,10 +10,8 @@ import { FcmPushService } from '../../services/fcm-service/fcm-push.service';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
-  joke: any;
-  message: any;
-  constructor(private swUpdate: SwUpdate, private apiService: ApiService,
-    private fcmPushService: FcmPushService) {
+
+  constructor(private swUpdate: SwUpdate, private fcmPushService: FcmPushService) {
     swUpdate.available.subscribe((event) => {
       swUpdate.activateUpdate().then(() => {
         document.location.reload();
@@ -23,18 +20,17 @@ export class HomePageComponent implements OnInit {
   }
 
   ngOnInit() {
-    const userId = 'user001';
     try {
-      this.fcmPushService.requestPermission(userId);
+      this.fcmPushService.requestPermission('user001');
       this.fcmPushService.receiveMessage();
-      this.message = this.fcmPushService.currentMessage;
     } catch (error) {
       console.error(error);
     }
-    this.apiService.getJokes().subscribe((joke) => {
-      console.log(joke);
-      this.joke = joke;
-    });
+  }
+
+  public submitIdea() {
+    // tslint:disable-next-line:max-line-length
+    window.location.href = 'https://forms.office.com/Pages/ResponsePage.aspx?id=iy2Am_oz-0Cst5_9vRkZ69VXllfmDndDn59Exd5dRIxUQ1VUMDgwNDNNR0k2QVpSSVZFR1RZQlMxMS4u';
   }
 
 }

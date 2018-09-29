@@ -1,13 +1,137 @@
-<div class="content-parent">
-  <div class="content">
-    <img src="../../../assets/imgs/ninja.svg" height="80px" width="80px">
-    <h1>
-      Chuck Jokes!
-    </h1>
-    <ng-container *ngIf="joke">
-      <p>
-        {{ joke.value }}
-      </p>
-    </ng-container>
+<div class="header">
+  <div class="header-title">Innovation</div>
+</div>
+<div class="div-style innovation">
+  <div class="innovation-center">
+    <img src="../../../assets/imgs/light-bulb.svg" height="180px" width="180px">
+    <h1>Innovation HUB</h1>
   </div>
+</div>
+<div class="div-style do-you">
+  <div class="sub-content">
+    <img src="../../../assets/imgs/conference.svg" height="180px" width="180px">
+    <h3>Do you want to be a PO your own idea?</h3>
+  </div>
+  <div class="sub-content">
+    <img src="../../../assets/imgs/trophy.svg" height="140px" width="140px">
+    <h3>Do you want to be recognised a super hero?</h3>
+  </div>
+  <div class="sub-content">
+    <img src="../../../assets/imgs/gem.svg" height="140px" width="140px">
+    <h3>Do you want to earn TCS gems ?</h3>
+  </div>
+</div>
+<div class="div-style your-ideas">
+  <div class="innovation-center">
+    <img src="../../../assets/imgs/question.svg" height="200px" width="200px">
+    <h2>What is your Idea ?</h2>
+  </div>
+</div>
+
+<div class="div-style idea">
+  <img src="../../../assets/imgs/idea.svg" height="180px" width="180px">
+  <h2>What can classify as an Idea ?</h2>
+  <div class="points">
+    <ul>
+      <li>Solves pain points in existing process/ implementation.</li>
+      <br>
+      <li>Can be anything out of the box/ unrelated to regular work but somehow relevant to airline business domain.</li>
+      <br>
+      <li>Can be a totally new technology trend.</li>
+      <br>
+      <li>Can be an existing idea but totally new to KLM or airline business domain.</li>
+    </ul>
+  </div>
+</div>
+<div class="div-style collecting-idea">
+  <img src="../../../assets/imgs/cloud-computing.svg" height="180px" width="180px">
+  <h2>Collection of ideas</h2>
+  <div class="points">
+    <ul>
+      <li>There is no bar on any discipline to come up with an idea.</li>
+      <br>
+      <li>Don’t think about the resources/ workload when proposing the idea, those will be facilitated.</li>
+      <br>
+      <li>Ideas can be submitted offline with short summary and type using provided form.</li>
+    </ul>
+  </div>
+</div>
+<div class="div-style presentation">
+  <img src="../../../assets/imgs/presentation.svg" height="180px" width="180px">
+  <h2>Presentation & Shortlist</h2>
+  <div class="points">
+    <ul>
+      <li>
+        A bi weekly connect to provide a pitching platform.
+      </li>
+      <br>
+      <li>Shortlisting based on uniqueness, potential and feasibility.</li>
+      <br>
+      <li>If there is no challenge in implementation of an idea it can be pursued by the individual</li>
+      <br>
+      <li>Shortlisted Ideas which need support will be facilitated resources to be developed further into
+        working prototype</li>
+      <br>
+      <li>Ideas can be refined and considered again in case they become eligible based on shortlist criteria.</li>
+    </ul>
+  </div>
+</div>
+<div class="div-style dev-demo">
+  <img src="../../../assets/imgs/development.svg" height="180px" width="180px">
+  <h2>Development & Internal Demo</h2>
+  <div class="points">
+    <ul>
+      <li>Small team will be assigned to develop idea into working prototype.</li>
+      <br>
+      <li>Scope and Timeline should be agreed upon by development team and management.</li>
+      <br>
+      <li>Once team has the prototype ready, there will be an internal demo and review will be done.</li>
+      <br>
+      <li>When a working prototype has been refined and finalised it can be presented to other stakeholders (Eg. Other
+        business domains within TCS KLM account, Other TCS accounts).</li>
+    </ul>
+  </div>
+</div>
+<div class="div-style marketing">
+  <img src="../../../assets/imgs/digital-campaign.svg" height="180px" width="180px">
+  <h2>Marketing</h2>
+  <div class="points">
+    <ul>
+      <li>Demo slots on prominent forums across KLM B2C or B2E domains.</li>
+      <br>
+      <li>Presentations to key KLM Stakeholders facilitated by TCS management.</li>
+      <br>
+      <li>Entry to TCS internal innovation forums eg. Innovista.</li>
+      <br>
+      <li>Entry to in TCS Innovation Incubator app which is viewed by every prominent client visitor of TCS KLM
+        Chennai office.
+      </li>
+      <br>
+      <li>Visibility to senior TCS Management levels.</li>
+    </ul>
+  </div>
+</div>
+<div class="div-style collecting-idea">
+  <img src="../../../assets/imgs/police-badge.svg" height="100px" width="100px">
+  <img src="../../../assets/imgs/clap.svg" height="100px" width="100px">
+  <img src="../../../assets/imgs/medal.svg" height="100px" width="100px">
+  <h2>Incentives</h2>
+  <div class="points">
+    <ul>
+      <li>TCS Gems for top ideas.</li>
+      <br>
+      <li>Recognition across TCS KLM account.</li>
+      <br>
+      <li>Chance to be featured in TCS Innovation Incubator app which provides visibility on both KLM and TCSManagement
+        levels.</li>
+      <br>
+      <li>Increased Job Satisfaction and Motivation.</li>
+      <br>
+      <li>Possibilities to be involved in and drive implementation of new Opportunities arising out of idea.
+      </li>
+      <br>
+      <li>Feel like a product owner of your Idea!.</li>
+    </ul>
+  </div>
+  <button class="submit-button" type="button" (click)="submitIdea()">Submit Idea</button>
 </div>

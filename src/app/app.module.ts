@@ -8,7 +8,6 @@ import { environment } from '../environments/environment';
 
 import { HttpClientModule } from '@angular/common/http';
 
-import { ApiService } from './services/api-service/api-service.service';
 import { FcmPushService } from './services/fcm-service/fcm-push.service';
 
 import { AngularFireDatabaseModule } from '../../node_modules/angularfire2/database';
@@ -16,6 +15,8 @@ import { AngularFireAuthModule } from '../../node_modules/angularfire2/auth';
 import { AngularFireModule } from '../../node_modules/angularfire2';
 
 import { HomePageComponent } from './components/home-page/home-page.component';
+
+import { CountToModule } from 'angular-count-to';
 
 const routes: Routes = [
   {
@@ -39,9 +40,10 @@ const routes: Routes = [
     HttpClientModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    CountToModule
   ],
-  providers: [ApiService, FcmPushService],
+  providers: [FcmPushService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
