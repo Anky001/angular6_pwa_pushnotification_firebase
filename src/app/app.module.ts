@@ -18,6 +18,7 @@ import { CountToModule } from 'angular-count-to';
 import { BlubComponent } from './components/blub/blub.component';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { SplashscreenComponent } from './components/splashscreen/splashscreen.component';
 
 const routes: Routes = [
   {
@@ -31,7 +32,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     HomePageComponent,
-    BlubComponent
+    BlubComponent,
+    SplashscreenComponent
   ],
   imports: [
     BrowserAnimationsModule,

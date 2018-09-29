@@ -9,19 +9,21 @@ import { style, state, animate, transition, trigger } from '@angular/animations'
   styleUrls: ['./home-page.component.scss'],
   animations: [
     trigger('fadeInOut', [
-      transition(':enter', [   // :enter is alias to 'void => *'
+      transition(':enter', [
         style({ opacity: 0 }),
         animate(500, style({ opacity: 1 }))
       ]),
-      transition(':leave', [   // :leave is alias to '* => void'
+      transition(':leave', [
         animate(500, style({ opacity: 0 }))
       ])
     ])
   ]
 })
 export class HomePageComponent implements OnInit {
-  public isBlubOn: boolean = false;
+  public splashScreen: boolean = true;
+  public showContent: number = 1;
   public userClickYes: boolean = false;
+  public isBlubOn: boolean = false;
   constructor(private swUpdate: SwUpdate) {
     swUpdate.available.subscribe((event) => {
       swUpdate.activateUpdate().then(() => {
@@ -31,7 +33,25 @@ export class HomePageComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.showSpalshScreen();
     // this.checkForYesClicked();
+  }
+
+  private showSpalshScreen() {
+    setTimeout(() => {
+      this.splashScreen = false;
+      this.updateContent();
+    }, 3000);
+  }
+
+  private updateContent() {
+    setInterval(() => {
+      if (this.showContent === 3) {
+        this.showContent = 1;
+      } else {
+        this.showContent++;
+      }
+    }, 2000);
   }
 
   public submitIdea() {

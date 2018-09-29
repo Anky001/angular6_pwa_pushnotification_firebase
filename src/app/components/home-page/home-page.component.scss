@@ -1,3 +1,19 @@
+.header {
+  height: 56px;
+  background: #222222;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  z-index: 1111111111111;
+}
+
+.header-innovation-text {
+  padding-left: 10px!important;
+  padding-top: 5px!important;
+}
+
 .content-wraper {
   padding-top: 56px;
 }
@@ -9,6 +25,10 @@
 
 .navbar-brand {
   padding: 15px 27px;
+}
+
+.navbar-text {
+  font-size: 18px;
 }
 
 ul {
@@ -71,7 +91,11 @@ ul {
 }
 
 .yes-button {
-  margin: 80px;
+  position: absolute;
+  bottom: 0;
+  padding: 24px;
+  width: 100%;
+  text-align: center;
 }
 
 .scrolling-wrapper {
@@ -143,6 +167,7 @@ ul {
 }
 
 .col-container {
+  position: relative;
   // display: table;
   // width: 100%;
 }
@@ -165,4 +190,47 @@ ul {
 
 .btn-success {
   background-color: #5eb947;
+}
+
+
+@-webkit-keyframes blinker {
+  from {
+    opacity: 1.0;
+  }
+
+  to {
+    opacity: 0.0;
+  }
+}
+
+.blink {
+  text-decoration: blink;
+  -webkit-animation-name: blinker;
+  -webkit-animation-duration: 0.6s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-direction: alternate;
+  float: right;
+}
+
+.moving-background {
+  height: 100vh !important;
+  background: red url(https://subtlepatterns.com/patterns/geometry2.png) repeat 0 0;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  height: 300px;
+  padding-top: 120px;
+  box-sizing: border-box;
+  -webkit-animation: slide 20s linear infinite;
+}
+
+@-webkit-keyframes slide {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: -400px 0;
+  }
 }
