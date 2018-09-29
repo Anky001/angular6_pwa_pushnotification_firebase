@@ -8,8 +8,6 @@ import { environment } from '../environments/environment';
 
 import { HttpClientModule } from '@angular/common/http';
 
-import { FcmPushService } from './services/fcm-service/fcm-push.service';
-
 import { AngularFireDatabaseModule } from '../../node_modules/angularfire2/database';
 import { AngularFireAuthModule } from '../../node_modules/angularfire2/auth';
 import { AngularFireModule } from '../../node_modules/angularfire2';
@@ -17,6 +15,9 @@ import { AngularFireModule } from '../../node_modules/angularfire2';
 import { HomePageComponent } from './components/home-page/home-page.component';
 
 import { CountToModule } from 'angular-count-to';
+import { BlubComponent } from './components/blub/blub.component';
+
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 const routes: Routes = [
   {
@@ -29,9 +30,11 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    HomePageComponent
+    HomePageComponent,
+    BlubComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     RouterModule.forRoot(routes, {
       useHash: true
     }),
@@ -43,7 +46,7 @@ const routes: Routes = [
     AngularFireModule.initializeApp(environment.firebase),
     CountToModule
   ],
-  providers: [FcmPushService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

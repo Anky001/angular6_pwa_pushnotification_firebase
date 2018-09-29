@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import './assets/scss/bootstrap.scss';
 
 * {
   margin: 0;
-  box-sizing: border-box;
+  // box-sizing: border-box;
   font-family: Ubuntu;
 }
 
-html,
-body {
-  height: 100%;
-  margin: 0;
-}
+// html,
+// body {
+//   height: 100%;
+//   margin: 0;
+// }
