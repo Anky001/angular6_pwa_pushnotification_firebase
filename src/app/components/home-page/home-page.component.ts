@@ -21,7 +21,7 @@ import { style, animate, transition, trigger } from '@angular/animations';
 })
 
 export class HomePageComponent implements OnInit {
-  public splashScreen = false;
+  public splashScreen = true;
   public showContent = 1;
   public userClickYes = false;
   public isBlubOn = false;
