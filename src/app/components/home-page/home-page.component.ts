@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SwUpdate } from '@angular/service-worker';
-import { style, state, animate, transition, trigger } from '@angular/animations';
+import { style, animate, transition, trigger } from '@angular/animations';
 
 
 @Component({
@@ -19,11 +19,12 @@ import { style, state, animate, transition, trigger } from '@angular/animations'
     ])
   ]
 })
+
 export class HomePageComponent implements OnInit {
-  public splashScreen: boolean = true;
-  public showContent: number = 1;
-  public userClickYes: boolean = false;
-  public isBlubOn: boolean = false;
+  public splashScreen = false;
+  public showContent = 1;
+  public userClickYes = false;
+  public isBlubOn = false;
   constructor(private swUpdate: SwUpdate) {
     swUpdate.available.subscribe((event) => {
       swUpdate.activateUpdate().then(() => {
@@ -57,7 +58,6 @@ export class HomePageComponent implements OnInit {
   public submitIdea() {
     this.isBlubOn = true;
     setTimeout(() => {
-      console.log('called');
       // tslint:disable-next-line:max-line-length
       window.location.href = 'https://forms.office.com/Pages/ResponsePage.aspx?id=iy2Am_oz-0Cst5_9vRkZ69VXllfmDndDn59Exd5dRIxUQ1VUMDgwNDNNR0k2QVpSSVZFR1RZQlMxMS4u';
     }, 1000);
@@ -73,6 +73,17 @@ export class HomePageComponent implements OnInit {
   public yesIwant() {
     this.userClickYes = true;
     localStorage.setItem('yesClicked', 'true');
+  }
+
+  scrollTo(className: string): void {
+    if (this.userClickYes) {
+      const elementList = document.querySelectorAll(className);
+      const element = elementList[0] as HTMLElement;
+      element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      this.yesIwant();
+    }
+
   }
 
 }

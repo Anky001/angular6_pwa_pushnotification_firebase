@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="col-md-5 col-lg-5 col-sm-5 col-xs-5 no-padding">
-      <button class="btn btn-danger pull-right" style="float: right;" (click)="submitIdea()">Submit Idea</button>
+      <button class="btn btn-danger pull-right" style="float: right;" (click)="scrollTo('.footer')">Submit Idea</button>
     </div>
   </div>
 
@@ -22,7 +22,7 @@
         <div class="do-you">
           <div class="center-parent">
             <div class="center-content">
-              <div class="main-content" *ngIf="showContent === 1" [@fadeInOut]>
+              <div class="main-content" *ngIf="showContent === 1">
                 <div class="logo">
                   <img src="../../../assets/imgs/conference.svg" height="180px" width="180px">
                 </div>
@@ -30,7 +30,7 @@
                   <h3>Do you want to be a <span class="po">PO</span> your own idea?</h3>
                 </div>
               </div>
-              <div class="main-content" *ngIf="showContent === 2" [@fadeInOut]>
+              <div class="main-content" *ngIf="showContent === 2">
                 <div class="logo">
                   <img src="../../../assets/imgs/trophy.svg" height="120px" width="120px">
                 </div>
@@ -59,24 +59,24 @@
         <div class="col-md-12 no-padding">
           <div class="div-style do-you-second">
             <div class="row">
-              <div class="col-md-4 col-sm-4 col-xs-4 col-ld-4">
+              <div class="col-md-4 col-sm-4 col-xs-4 col-ld-4 fade-in one">
                 <img src="../../../assets/imgs/conference.svg" height="84px" width="84px">
                 <h3 class="do-you-points">Be the PO your own idea</h3>
               </div>
-              <div class="col-md-4 col-sm-4 col-xs-4 col-ld-4">
+              <div class="col-md-4 col-sm-4 col-xs-4 col-ld-4 fade-in two">
                 <img src="../../../assets/imgs/trophy.svg" height="84px" width="84px">
-                <h3 class="do-you-points">Get recognised as super hero</h3>
+                <h3 class="do-you-points">Get recognised as a Innovator</h3>
               </div>
-              <div class="col-md-4 col-sm-4 col-xs-4 col-ld-4">
+              <div class="col-md-4 col-sm-4 col-xs-4 col-ld-4 fade-in three">
                 <img src="../../../assets/imgs/gem.svg" height="84px" width="84px">
-                <h3 class="do-you-points">Earn the TCS gems</h3>
+                <h3 class="do-you-points">Win the TCS Gems</h3>
               </div>
             </div>
             <div class="col-md-12 no-padding card-top">
               <div class="scrolling-wrapper">
                 <div class="col-container">
                   <div class="col card">
-                    <h2 class="card-title">Phase 1
+                    <h2 class="card-title" (click)="scrollTo('.card2')">Phase 1
                       <img class="pull-right" src="../../../assets/imgs/right-chevron.svg" height="22px" width="22px"
                         class="blink">
                     </h2>
@@ -95,8 +95,8 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col card">
-                    <h2 class="card-title">Phase 2
+                  <div class="col card card2">
+                    <h2 class="card-title" (click)="scrollTo('.card3')">Phase 2
                       <img class="pull-right" src="../../../assets/imgs/right-chevron.svg" height="22px" width="22px"
                         class="blink">
                     </h2>
@@ -113,8 +113,8 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col card">
-                    <h2 class="card-title">Phase 3
+                  <div class="col card card3">
+                    <h2 class="card-title" (click)="scrollTo('.card4')">Phase 3
                       <img class="pull-right" src="../../../assets/imgs/right-chevron.svg" height="22px" width="22px"
                         class="blink">
                     </h2>
@@ -132,8 +132,8 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col card">
-                    <h2 class="card-title">Phase 4
+                  <div class="col card card4">
+                    <h2 class="card-title" (click)="scrollTo('.card5')">Phase 4
                       <img class="pull-right" src="../../../assets/imgs/right-chevron.svg" height="22px" width="22px"
                         class="blink">
                     </h2>
@@ -153,7 +153,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col card">
+                  <div class="col card card5">
                     <h2 class="card-title">Phase 5</h2>
                     <div class="card-body">
                       <img src="../../../assets/imgs/digital-campaign.svg" height="67px" width="67px">
@@ -206,12 +206,13 @@
             </div>
           </div>
         </div>
-        <div class="col-md-12 no-padding">
+        <div class="col-md-12 no-padding footer">
           <div class="submit-idea">
-            <h2 class="submit-idea-title">Submit You Idea !</h2>
-            <app-blub [isBlubOn]="isBlubOn"></app-blub>
-            <div class="submit-button">
-              <button id="submit" class="btn btn-success btn-lg" (click)="submitIdea()">Submit</button>
+            <h2 class="submit-idea-title">Submit Your Idea !</h2>
+            <app-blub [isBlubOn]="isBlubOn" (click)="submitIdea()"></app-blub>
+            <div class="submit-text">
+              Press the Blub to submit your Idea !
+              <!-- <button id="submit" class="btn btn-success btn-lg" (click)="submitIdea()">Submit</button> -->
             </div>
           </div>
         </div>
