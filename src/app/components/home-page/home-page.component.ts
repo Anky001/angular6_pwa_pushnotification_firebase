@@ -42,7 +42,7 @@ export class HomePageComponent implements OnInit {
     setTimeout(() => {
       this.splashScreen = false;
       this.updateContent();
-    }, 3000);
+    }, 1500);
   }
 
   private updateContent() {
@@ -52,7 +52,7 @@ export class HomePageComponent implements OnInit {
       } else {
         this.showContent++;
       }
-    }, 2000);
+    }, 2200);
   }
 
   public submitIdea() {
@@ -60,7 +60,7 @@ export class HomePageComponent implements OnInit {
     setTimeout(() => {
       // tslint:disable-next-line:max-line-length
       window.location.href = 'https://forms.office.com/Pages/ResponsePage.aspx?id=iy2Am_oz-0Cst5_9vRkZ69VXllfmDndDn59Exd5dRIxUQ1VUMDgwNDNNR0k2QVpSSVZFR1RZQlMxMS4u';
-    }, 1000);
+    }, 500);
 
   }
 
@@ -76,14 +76,9 @@ export class HomePageComponent implements OnInit {
   }
 
   scrollTo(className: string): void {
-    if (this.userClickYes) {
-      const elementList = document.querySelectorAll(className);
-      const element = elementList[0] as HTMLElement;
-      element.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      this.yesIwant();
-    }
-
+    const elementList = document.querySelectorAll(className);
+    const element = elementList[0] as HTMLElement;
+    element.scrollIntoView({ behavior: 'smooth' });
   }
 
 }

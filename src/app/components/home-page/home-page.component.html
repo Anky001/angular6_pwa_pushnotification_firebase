@@ -12,12 +12,12 @@
       </div>
     </div>
     <div class="col-md-5 col-lg-5 col-sm-5 col-xs-5 no-padding">
-      <button class="btn btn-danger pull-right" style="float: right;" (click)="scrollTo('.footer')">Submit Idea</button>
+      <button class="header-submit-button btn btn-danger pull-right" style="float: right;" (click)="submitIdea()">Submit Idea</button>
     </div>
   </div>
 
   <div class="container-fluid">
-    <div class="row" *ngIf="!userClickYes" [@fadeInOut]>
+    <div class="row" *ngIf="!userClickYes">
       <div class="col-md-12 no-padding">
         <div class="do-you">
           <div class="center-parent">
@@ -49,7 +49,7 @@
             </div>
           </div>
           <div class="yes-button">
-            <button id="yesIwant" class="btn btn-success btn-lg" (click)="yesIwant()">Know the Process</button>
+            <button id="yesIwant" class="btn btn-success btn-lg" (click)="yesIwant()">Want to know how ?</button>
           </div>
         </div>
       </div>
@@ -61,28 +61,25 @@
             <div class="row">
               <div class="col-md-4 col-sm-4 col-xs-4 col-ld-4 fade-in one">
                 <img src="../../../assets/imgs/conference.svg" height="84px" width="84px">
-                <h3 class="do-you-points">Be the PO your own idea</h3>
+                <h3 class="do-you-points">Do you want to be a PO your own idea?</h3>
               </div>
               <div class="col-md-4 col-sm-4 col-xs-4 col-ld-4 fade-in two">
                 <img src="../../../assets/imgs/trophy.svg" height="84px" width="84px">
-                <h3 class="do-you-points">Get recognised as a Innovator</h3>
+                <h3 class="do-you-points">Do you want to be recognised as a Innvoator?</h3>
               </div>
               <div class="col-md-4 col-sm-4 col-xs-4 col-ld-4 fade-in three">
                 <img src="../../../assets/imgs/gem.svg" height="84px" width="84px">
-                <h3 class="do-you-points">Win the TCS Gems</h3>
+                <h3 class="do-you-points">Do you want to earn TCS Gems?</h3>
               </div>
             </div>
             <div class="col-md-12 no-padding card-top">
               <div class="scrolling-wrapper">
                 <div class="col-container">
                   <div class="col card">
-                    <h2 class="card-title" (click)="scrollTo('.card2')">Phase 1
-                      <img class="pull-right" src="../../../assets/imgs/right-chevron.svg" height="22px" width="22px"
-                        class="blink">
+                    <h2 class="card-title">Phase 1 : Ideation
                     </h2>
-                    <img src="../../../assets/imgs/idea.svg" height="80px" width="80px">
+                    <img src="../../../assets/imgs/idea.svg" height="100px" width="80px">
                     <div class="card-body">
-                      <h2 class="card-subtitle">What can classify as an Idea ?</h2>
                       <div class="points">
                         <ul>
                           <li>Solves pain points in existing process/ implementation.</li>
@@ -96,13 +93,11 @@
                     </div>
                   </div>
                   <div class="col card card2">
-                    <h2 class="card-title" (click)="scrollTo('.card3')">Phase 2
-                      <img class="pull-right" src="../../../assets/imgs/right-chevron.svg" height="22px" width="22px"
-                        class="blink">
+                    <h2 class="card-title">Phase 2 : Collection of ideas
                     </h2>
                     <div class="card-body">
                       <img src="../../../assets/imgs/cloud-computing.svg" height="108px" width="80px">
-                      <h2 class="card-subtitle">Collection of ideas</h2>
+                      <!-- <h2 class="card-subtitle">Collection of ideas</h2> -->
                       <div class="points">
                         <ul>
                           <li>There is no bar on any discipline to come up with an idea.</li>
@@ -114,13 +109,9 @@
                     </div>
                   </div>
                   <div class="col card card3">
-                    <h2 class="card-title" (click)="scrollTo('.card4')">Phase 3
-                      <img class="pull-right" src="../../../assets/imgs/right-chevron.svg" height="22px" width="22px"
-                        class="blink">
-                    </h2>
+                    <h2 class="card-title">Phase 3 : Presentation & Shortlisting</h2>
                     <div class="card-body">
                       <img src="../../../assets/imgs/presentation.svg" height="96px" width="96px">
-                      <h2 class="card-subtitle">Presentation & Shortlisting</h2>
                       <div class="points" style="font-size: 0.9em;">
                         <ul>
                           <li>A bi weekly connect to provide a pitching platform.</li>
@@ -133,14 +124,10 @@
                     </div>
                   </div>
                   <div class="col card card4">
-                    <h2 class="card-title" (click)="scrollTo('.card5')">Phase 4
-                      <img class="pull-right" src="../../../assets/imgs/right-chevron.svg" height="22px" width="22px"
-                        class="blink">
-                    </h2>
+                    <h2 class="card-title">Phase 4 : Development & Internal Demo</h2>
                     <div class="card-body">
-                      <img src="../../../assets/imgs/development.svg" height="93px" width="93px">
-                      <h2 class="card-subtitle">Development & Internal Demo</h2>
-                      <div class="points" style="font-size: 0.82em;">
+                      <img src="../../../assets/imgs/development.svg" height="100px" width="100px">
+                      <div class="points" style="font-size: 0.9em;">
                         <ul>
                           <li>Small team will be assigned to develop idea into working prototype.</li>
                           <li>Scope & Timeline should be agreed upon by development team & management.</li>
@@ -154,12 +141,9 @@
                     </div>
                   </div>
                   <div class="col card card5">
-                    <h2 class="card-title" (click)="scrollTo('.incentives')">Phase 5
-                        <img class="pull-right" src="../../../assets/imgs/right-chevron.svg" height="22px" width="22px"
-                          class="blink"></h2>
+                    <h2 class="card-title">Phase 5 : Marketing & demos with Stake holders</h2>
                     <div class="card-body">
-                      <img src="../../../assets/imgs/digital-campaign.svg" height="67px" width="67px">
-                      <h2 class="card-subtitle" style="font-size: 20px;">Marketing & demos with Stake holders</h2>
+                      <img src="../../../assets/imgs/digital-campaign.svg" height="100px" width="100px">
                       <div class="points" style="font-size: 0.95em;">
                         <ul>
                           <li>Demo slots on prominent forums across KLM B2C or B2E domains.</li>
