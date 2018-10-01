@@ -42,7 +42,7 @@ export class HomePageComponent implements OnInit {
     setTimeout(() => {
       this.splashScreen = false;
       this.updateContent();
-    }, 1500);
+    }, 1000);
   }
 
   private updateContent() {
@@ -76,6 +76,7 @@ export class HomePageComponent implements OnInit {
   }
 
   scrollTo(className: string): void {
+    console.log(className);
     const elementList = document.querySelectorAll(className);
     const element = elementList[0] as HTMLElement;
     element.scrollIntoView({ behavior: 'smooth' });

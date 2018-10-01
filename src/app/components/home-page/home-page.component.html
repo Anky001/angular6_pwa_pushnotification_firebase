@@ -12,7 +12,8 @@
       </div>
     </div>
     <div class="col-md-5 col-lg-5 col-sm-5 col-xs-5 no-padding">
-      <button class="header-submit-button btn btn-danger pull-right" style="float: right;" (click)="submitIdea()">Submit Idea</button>
+      <button class="header-submit-button btn btn-danger pull-right" style="float: right;" (click)="submitIdea()">Submit
+        Idea</button>
     </div>
   </div>
 
@@ -27,7 +28,7 @@
                   <img src="../../../assets/imgs/conference.svg" height="180px" width="180px">
                 </div>
                 <div class="logo-title">
-                  <h3>Do you want to be a <span class="po">PO</span> your own idea?</h3>
+                  <h3>Do you want to be a <span class="po">PO</span> of your own cool idea?</h3>
                 </div>
               </div>
               <div class="main-content" *ngIf="showContent === 2">
@@ -35,7 +36,7 @@
                   <img src="../../../assets/imgs/trophy.svg" height="120px" width="120px">
                 </div>
                 <div class="logo-title">
-                  <h3>Do you want to be recognised as a <span class="po">Innvoator</span>?</h3>
+                  <h3>Do you want to be recognised as a <span class="po">Great Innovator</span>?</h3>
                 </div>
               </div>
               <div class="main-content" *ngIf="showContent === 3">
@@ -43,13 +44,13 @@
                   <img src="../../../assets/imgs/gem.svg" height="120px" width="120px">
                 </div>
                 <div class="logo-title">
-                  <h3>Do you want to earn <span class="po">TCS Gems</span>?</h3>
+                  <h3>Do you want to earn <span class="po">TCS Gems</span> and shop in Amazon?</h3>
                 </div>
               </div>
             </div>
           </div>
           <div class="yes-button">
-            <button id="yesIwant" class="btn btn-success btn-lg" (click)="yesIwant()">Want to know how ?</button>
+            <button id="yesIwant" class="btn btn-success btn-lg" (click)="yesIwant()">Click to know how</button>
           </div>
         </div>
       </div>
@@ -61,11 +62,11 @@
             <div class="row">
               <div class="col-md-4 col-sm-4 col-xs-4 col-ld-4 fade-in one">
                 <img src="../../../assets/imgs/conference.svg" height="84px" width="84px">
-                <h3 class="do-you-points">Do you want to be a PO your own idea?</h3>
+                <h3 class="do-you-points">Do you want to be a PO of your own idea?</h3>
               </div>
-              <div class="col-md-4 col-sm-4 col-xs-4 col-ld-4 fade-in two">
+              <div class="col-md-4 col-sm-5 col-xs-4 col-ld-4 fade-in two">
                 <img src="../../../assets/imgs/trophy.svg" height="84px" width="84px">
-                <h3 class="do-you-points">Do you want to be recognised as a Innvoator?</h3>
+                <h3 class="do-you-points">Do you want to be recognised as an Innovator?</h3>
               </div>
               <div class="col-md-4 col-sm-4 col-xs-4 col-ld-4 fade-in three">
                 <img src="../../../assets/imgs/gem.svg" height="84px" width="84px">
@@ -76,55 +77,66 @@
               <div class="scrolling-wrapper">
                 <div class="col-container">
                   <div class="col card">
-                    <h2 class="card-title">Phase 1 : Ideation
+                    <h2 class="card-title">Phase 1 : Come up with a cool Idea
+                      <img src="../../../assets/imgs/right-chevron.svg" height="20px" width="20px" style="position: absolute;right: 12px;margin-top: 4px;"
+                        class="blink">
                     </h2>
                     <img src="../../../assets/imgs/idea.svg" height="100px" width="80px">
                     <div class="card-body">
                       <div class="points">
                         <ul>
-                          <li>Solves pain points in existing process/ implementation.</li>
-                          <li>Can be anything out of the box/ unrelated to regular work but somehow relevant to airline
+                          <li>To solve the pain points in existing process/ implementation.</li>
+                          <li>Can be anything out of the box/ unrelated to regular work or project but relevant to our
+                            airline
                             business
                             domain.</li>
-                          <li>Can be a totally new technology trend.</li>
+                          <li>Can be a cool treding technology.</li>
                           <li>Can be an existing idea but totally new to KLM or airline business domain.</li>
                         </ul>
+                        <div class="rule-points">
+                          <i> ** No bar on any discipline to come up with an idea.<br>
+                            ** Don’t think about the resources/ workload (will be facilitated if required).
+                          </i>
+                        </div>
                       </div>
                     </div>
                   </div>
                   <div class="col card card2">
-                    <h2 class="card-title">Phase 2 : Collection of ideas
+                    <h2 class="card-title">Phase 2 : Presentation
+                      <img src="../../../assets/imgs/right-chevron.svg" height="20px" width="20px" style="position: absolute;right: 12px;margin-top: 4px;"
+                        class="blink">
                     </h2>
                     <div class="card-body">
-                      <img src="../../../assets/imgs/cloud-computing.svg" height="108px" width="80px">
-                      <!-- <h2 class="card-subtitle">Collection of ideas</h2> -->
+                      <img src="../../../assets/imgs/presentation.svg" height="108px" width="80px">
                       <div class="points">
                         <ul>
-                          <li>There is no bar on any discipline to come up with an idea.</li>
-                          <li>Don’t think about the resources/ workload when proposing the idea, those will be
-                            facilitated.</li>
-                          <li>Ideas can be submitted offline with short summary & type using provided form.</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col card card3">
-                    <h2 class="card-title">Phase 3 : Presentation & Shortlisting</h2>
-                    <div class="card-body">
-                      <img src="../../../assets/imgs/presentation.svg" height="96px" width="96px">
-                      <div class="points" style="font-size: 0.9em;">
-                        <ul>
-                          <li>A bi weekly connect to provide a pitching platform.</li>
-                          <li>Shortlisting based on uniqueness, potential & feasibility.</li>
-                          <li>If there is no challenge in implementation of an idea it can be pursued by the individual</li>
-                          <li>Shortlisted Ideas which need support will be facilitated resources</li>
+                          <li>A bi-weekly connect to provide a idea pitching platform.</li>
                           <li>Ideas can be improvised & shortlisted based on criteria.</li>
                         </ul>
                       </div>
                     </div>
                   </div>
+                  <div class="col card card3">
+                    <h2 class="card-title">Phase 3 : Shortlisting
+                      <img src="../../../assets/imgs/right-chevron.svg" height="20px" width="20px" style="position: absolute;right: 12px;margin-top: 4px;"
+                        class="blink">
+                    </h2>
+                    <div class="card-body">
+                      <img src="../../../assets/imgs/presentation.svg" height="96px" width="96px">
+                      <div class="points" style="font-size: 0.9em;">
+                        <ul>
+                          <li>Shortlisting based on uniqueness, potential, feasibility and voting.</li>
+                          <li>Shortlisted Ideas which need support will be facilitated with resources</li>
+                          <li>If there is no challenge or dependency idea can be pursued by the individual itself.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
                   <div class="col card card4">
-                    <h2 class="card-title">Phase 4 : Development & Internal Demo</h2>
+                    <h2 class="card-title">Phase 4 : Development & Working Demo
+                      <img src="../../../assets/imgs/right-chevron.svg" height="20px" width="20px" style="position: absolute;right: 12px;margin-top: 4px;"
+                        class="blink">
+                    </h2>
                     <div class="card-body">
                       <img src="../../../assets/imgs/development.svg" height="100px" width="100px">
                       <div class="points" style="font-size: 0.9em;">
@@ -132,9 +144,9 @@
                           <li>Small team will be assigned to develop idea into working prototype.</li>
                           <li>Scope & Timeline should be agreed upon by development team & management.</li>
                           <li>Once team has the prototype ready, there will be an internal demo & review will be done.</li>
-                          <li>When a working prototype has been refined & finalised it can be presented to other
+                          <li>When a working prototype has been refined & finalized it can be presented to other
                             stakeholders
-                            (Eg. Other
+                            (e.g. Other
                             business domains within TCS KLM account, Other TCS accounts).</li>
                         </ul>
                       </div>
@@ -148,13 +160,8 @@
                         <ul>
                           <li>Demo slots on prominent forums across KLM B2C or B2E domains.</li>
                           <li>Presentations to key KLM Stakeholders facilitated by TCS management.</li>
-                          <li>Entry to TCS internal innovation forums eg. Innovista.</li>
-                          <li>Entry to in TCS Innovation Incubator app which is viewed by every prominent client
-                            visitor
-                            of
-                            TCS
-                            KLM
-                            Chennai office.
+                          <li>Entry to TCS Innovation Incubator app which is visible to every prominent client
+                            visit of TCS KLM Chennai office.
                           </li>
                           <li>Visibility to senior TCS Management levels.</li>
                         </ul>
@@ -174,20 +181,20 @@
             <h2>Incentives</h2>
             <div class="incentives-point">
               <ul>
-                <li>TCS Gems for top ideas.</li>
-                <br>
                 <li>Recognition across TCS KLM account.</li>
                 <br>
-                <li>Chance to be featured in TCS Innovation Incubator app which provides visibility on both KLM &
-                  TCSManagement
-                  levels.</li>
+                <li>Your idea can be featured in TCS Innovation Incubator app which provides visibility on both KLM &
+                  Senior TCS Management levels.</li>
                 <br>
                 <li>Increased Job Satisfaction & Motivation.</li>
                 <br>
-                <li>Possibilities to be involved in & drive implementation of new Opportunities arising out of idea.
+                <li>Possibility to involved in & drive implementation of new Opportunities arising
+                  out of your idea.
                 </li>
                 <br>
                 <li>Feel like a product owner of your Idea!.</li>
+                <br>
+                <li>TCS Gems for Cool Ideas.</li>
               </ul>
             </div>
           </div>
@@ -198,7 +205,6 @@
             <app-blub [isBlubOn]="isBlubOn" (click)="submitIdea()"></app-blub>
             <div class="submit-text">
               Press the Blub to submit your Idea !
-              <!-- <button id="submit" class="btn btn-success btn-lg" (click)="submitIdea()">Submit</button> -->
             </div>
           </div>
         </div>
