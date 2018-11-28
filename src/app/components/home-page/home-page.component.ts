@@ -25,6 +25,8 @@ export class HomePageComponent implements OnInit {
   public showContent = 1;
   public userClickYes = false;
   public isBlubOn = false;
+  public notificationText = '';
+
   constructor(private swUpdate: SwUpdate) {
     swUpdate.available.subscribe((event) => {
       swUpdate.activateUpdate().then(() => {
@@ -34,8 +36,11 @@ export class HomePageComponent implements OnInit {
   }
 
   ngOnInit() {
+    // this.splashScreen = true;
     this.showSpalshScreen();
     // this.checkForYesClicked();
+    // this.notificationText = 'Please click on the link below and vote for a good Idea.';
+    this.notificationText = 'Please hit the button below to see the Results. 🎉';
   }
 
   private showSpalshScreen() {

@@ -4,7 +4,7 @@
 <ng-container *ngIf="!splashScreen">
   <div class="row header">
     <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1 no-padding">
-      <img alt="blub" src="../../../assets/imgs/light-bulb.svg" height="34px" width="34px">
+      <img alt="bulb" src="../../../assets/imgs/light-bulb.svg" height="34px" width="34px">
     </div>
     <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 pull-left no-padding">
       <div class="header-innovation-text">
@@ -12,12 +12,18 @@
       </div>
     </div>
     <div class="col-md-5 col-lg-5 col-sm-5 col-xs-5 no-padding">
-      <button class="header-submit-button btn btn-danger pull-right" style="float: right;" (click)="submitIdea()">Submit
-        Idea</button>
+      <button class="header-submit-button btn btn-danger pull-right" style="float: right;" (click)="submitIdea()">Submit Idea
+      </button>
     </div>
   </div>
 
   <div class="container-fluid">
+      <div class="col-md-12 notification">
+          {{ notificationText }}
+        <br>
+        <!-- <a class="btn btn-default link-button" href="https://nl.surveymonkey.com/r/WDTZTND">Vote</a> -->
+        <a class="btn btn-default link-button" routerLink="/results">Results</a>
+      </div>
     <div class="row" *ngIf="!userClickYes">
       <div class="col-md-12 no-padding">
         <div class="do-you">
@@ -28,7 +34,8 @@
                   <img src="../../../assets/imgs/conference.svg" height="180px" width="180px">
                 </div>
                 <div class="logo-title">
-                  <h3>Do you want to be a <span class="po">PO</span> of your own cool idea?</h3>
+                  <h3>Do you want to be a
+                    <span class="po">PO</span> of your own cool idea?</h3>
                 </div>
               </div>
               <div class="main-content" *ngIf="showContent === 2">
@@ -36,7 +43,8 @@
                   <img src="../../../assets/imgs/trophy.svg" height="120px" width="120px">
                 </div>
                 <div class="logo-title">
-                  <h3>Do you want to be recognised as a <span class="po">Great Innovator</span>?</h3>
+                  <h3>Do you want to be recognised as a
+                    <span class="po">Great Innovator</span>?</h3>
                 </div>
               </div>
               <div class="main-content" *ngIf="showContent === 3">
@@ -44,7 +52,8 @@
                   <img src="../../../assets/imgs/gem.svg" height="120px" width="120px">
                 </div>
                 <div class="logo-title">
-                  <h3>Do you want to earn <span class="po">TCS Gems</span> and shop in Amazon?</h3>
+                  <h3>Do you want to earn
+                    <span class="po">TCS Gems</span> and shop in Amazon?</h3>
                 </div>
               </div>
             </div>
@@ -60,15 +69,15 @@
         <div class="col-md-12 no-padding">
           <div class="div-style do-you-second">
             <div class="row">
-              <div class="col-md-4 col-sm-4 col-xs-4 col-ld-4 fade-in one">
+              <div class="col-md-4 col-sm-4 col-xs-4 col-ld-4 fade-in one margin-from-top">
                 <img src="../../../assets/imgs/conference.svg" height="84px" width="84px">
                 <h3 class="do-you-points">Do you want to be a PO of your own idea?</h3>
               </div>
-              <div class="col-md-4 col-sm-5 col-xs-4 col-ld-4 fade-in two">
+              <div class="col-md-4 col-sm-5 col-xs-4 col-ld-4 fade-in two margin-from-top">
                 <img src="../../../assets/imgs/trophy.svg" height="84px" width="84px">
                 <h3 class="do-you-points">Do you want to be recognised as an Innovator?</h3>
               </div>
-              <div class="col-md-4 col-sm-4 col-xs-4 col-ld-4 fade-in three">
+              <div class="col-md-4 col-sm-4 col-xs-4 col-ld-4 fade-in three margin-from-top">
                 <img src="../../../assets/imgs/gem.svg" height="84px" width="84px">
                 <h3 class="do-you-points">Do you want to earn TCS Gems?</h3>
               </div>
@@ -86,16 +95,15 @@
                       <div class="points">
                         <ul>
                           <li>To solve the pain points in existing process/ implementation.</li>
-                          <li>Can be anything out of the box/ unrelated to regular work or project but relevant to our
-                            airline
-                            business
-                            domain.</li>
-                          <li>Can be a cool treding technology.</li>
+                          <li>Can be anything out of the box/ unrelated to regular work or project but relevant to our airline
+                            business domain.
+                          </li>
+                          <li>Can be a cool trending technology.</li>
                           <li>Can be an existing idea but totally new to KLM or airline business domain.</li>
                         </ul>
                         <div class="rule-points">
-                          <i> ** No bar on any discipline to come up with an idea.<br>
-                            ** Don’t think about the resources/ workload (will be facilitated if required).
+                          <i> ** No bar on any discipline to come up with an idea.
+                            <br> ** Don’t think about the resources/ workload (will be facilitated if required).
                           </i>
                         </div>
                       </div>
@@ -122,7 +130,7 @@
                         class="blink">
                     </h2>
                     <div class="card-body">
-                      <img src="../../../assets/imgs/presentation.svg" height="96px" width="96px">
+                      <img src="../../../assets/imgs/selection.svg" height="96px" width="96px">
                       <div class="points" style="font-size: 0.9em;">
                         <ul>
                           <li>Shortlisting based on uniqueness, potential, feasibility and voting.</li>
@@ -144,10 +152,8 @@
                           <li>Small team will be assigned to develop idea into working prototype.</li>
                           <li>Scope & Timeline should be agreed upon by development team & management.</li>
                           <li>Once team has the prototype ready, there will be an internal demo & review will be done.</li>
-                          <li>When a working prototype has been refined & finalized it can be presented to other
-                            stakeholders
-                            (e.g. Other
-                            business domains within TCS KLM account, Other TCS accounts).</li>
+                          <li>When a working prototype has been refined & finalized it can be presented to other stakeholders
+                            (e.g. Other business domains within TCS KLM account, Other TCS accounts).</li>
                         </ul>
                       </div>
                     </div>
@@ -160,8 +166,8 @@
                         <ul>
                           <li>Demo slots on prominent forums across KLM B2C or B2E domains.</li>
                           <li>Presentations to key KLM Stakeholders facilitated by TCS management.</li>
-                          <li>Entry to TCS Innovation Incubator app which is visible to every prominent client
-                            visit of TCS KLM Chennai office.
+                          <li>Entry to TCS Innovation Incubator app which is visible to every prominent client visit of TCS KLM
+                            Chennai office.
                           </li>
                           <li>Visibility to senior TCS Management levels.</li>
                         </ul>
@@ -183,13 +189,12 @@
               <ul>
                 <li>Recognition across TCS KLM account.</li>
                 <br>
-                <li>Your idea can be featured in TCS Innovation Incubator app which provides visibility on both KLM &
-                  Senior TCS Management levels.</li>
+                <li>Your idea can be featured in TCS Innovation Incubator app which provides visibility on both KLM & Senior
+                  TCS Management levels.</li>
                 <br>
                 <li>Increased Job Satisfaction & Motivation.</li>
                 <br>
-                <li>Possibility to involved in & drive implementation of new Opportunities arising
-                  out of your idea.
+                <li>Possibility to involved in & drive implementation of new Opportunities arising out of your idea.
                 </li>
                 <br>
                 <li>Feel like a product owner of your Idea!.</li>
@@ -204,7 +209,7 @@
             <h2 class="submit-idea-title">Submit Your Idea !</h2>
             <app-blub [isBlubOn]="isBlubOn" (click)="submitIdea()"></app-blub>
             <div class="submit-text">
-              Press the Blub to submit your Idea !
+              Press the Bulb to submit your Idea !
             </div>
           </div>
         </div>

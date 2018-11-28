@@ -1,0 +1,50 @@
+<div class="result-card-wrapper">
+  <div class="col-md-12">
+    <div class="row header">
+      <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2" routerLink="/home">
+        <img alt="bulb" src="../../../assets/imgs/left-arrow-angle.svg" height="26px" width="26px" class="back-arrow">
+      </div>
+      <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 pull-left no-padding">
+        <div class="header-innovation-text" style="color: azure">
+          Innovation HUB
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="pyro" *ngIf="!stopFireWorks" [@fadeInOut]>
+      <div class="before"></div>
+      <div class="after"></div>
+    </div>
+    <div class="congo-text">Congratulations!</div>
+    <div class="result-card" *ngFor="let idea of bestIdea" [@fadeInOut]>
+      <div class="col-md-1 col-sm-1 col-xs-4 card-img" [ngStyle]="{'background-image' : 'url(' + idea.image + ')'}"></div>
+      <div class="col-md-8 col-sm-8 col-xs-8 card-text">
+        <div class="card-text-name">{{ idea.name }}</div>
+        <div class="card-text-idea">{{ idea.text }}</div>
+      </div>
+      <div class="col-md-1 col-sm-1 col-xs-1">
+        <div class="badge-icon">
+          <img src="../../../assets//imgs/badge.svg" height="20" width="20">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="chart-wrapper">
+      <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [colors]="chartColors" [chartType]="pieChartType"></canvas>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="list-wrapper">
+      <div class="other-ideas-text">Other cool ideas</div>
+      <div class="list-card" *ngFor="let idea of otherIdeas">
+        <div class="name">{{ idea.name }}</div>
+        <div class="idea">{{ idea.idea }}</div>
+      </div>
+    </div>
+  </div>
+  <div class="notification">
+    ** Please note that the voting link will be up and running again with some <b>NEW Cool 😎 Ideas</b>!
+    which were not included in the previous polling.
+  </div>

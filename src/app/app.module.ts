@@ -8,24 +8,37 @@ import { environment } from '../environments/environment';
 
 import { HttpClientModule } from '@angular/common/http';
 
+import { FcmPushService } from './services/fcm-service/fcm-push.service';
+
 import { AngularFireDatabaseModule } from '../../node_modules/angularfire2/database';
 import { AngularFireAuthModule } from '../../node_modules/angularfire2/auth';
 import { AngularFireModule } from '../../node_modules/angularfire2';
+import { AngularFirestoreModule } from '../../node_modules/angularfire2/firestore';
 
 import { HomePageComponent } from './components/home-page/home-page.component';
 
 import { CountToModule } from 'angular-count-to';
 import { BlubComponent } from './components/blub/blub.component';
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SplashscreenComponent } from './components/splashscreen/splashscreen.component';
+import { ResultsComponent } from './components/results/results.component';
+
+import { ChartsModule } from 'ng2-charts';
 
 const routes: Routes = [
   {
     path: 'home',
     component: HomePageComponent,
   },
-  { path: '', redirectTo: '/home', pathMatch: 'full' }
+  {
+    path: 'results',
+    component: ResultsComponent
+  },
+  {
+    path: '',
+    redirectTo: '/home', pathMatch: 'full'
+  }
 ];
 
 @NgModule({
@@ -33,22 +46,30 @@ const routes: Routes = [
     AppComponent,
     HomePageComponent,
     BlubComponent,
-    SplashscreenComponent
+    SplashscreenComponent,
+    ResultsComponent
   ],
   imports: [
-    BrowserAnimationsModule,
-    RouterModule.forRoot(routes, {
-      useHash: true
-    }),
-    BrowserModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    HttpClientModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase),
-    CountToModule
+    AngularFirestoreModule,
+
+    BrowserModule,
+    BrowserAnimationsModule,
+
+    ChartsModule,
+    CountToModule,
+
+    HttpClientModule,
+
+    RouterModule.forRoot(routes, {
+      useHash: true
+    }),
+
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
-  providers: [],
+  providers: [FcmPushService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
