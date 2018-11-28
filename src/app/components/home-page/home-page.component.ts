@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { SwUpdate } from '@angular/service-worker';
 import { style, animate, transition, trigger } from '@angular/animations';
 
@@ -27,7 +28,7 @@ export class HomePageComponent implements OnInit {
   public isBlubOn = false;
   public notificationText = '';
 
-  constructor(private swUpdate: SwUpdate) {
+  constructor(private swUpdate: SwUpdate, private router: Router) {
     swUpdate.available.subscribe((event) => {
       swUpdate.activateUpdate().then(() => {
         document.location.reload();
@@ -39,8 +40,9 @@ export class HomePageComponent implements OnInit {
     // this.splashScreen = true;
     this.showSpalshScreen();
     // this.checkForYesClicked();
-    // this.notificationText = 'Please click on the link below and vote for a good Idea.';
-    this.notificationText = 'Please hit the button below to see the Results. 🎉';
+    // tslint:disable-next-line:max-line-length
+    this.notificationText = 'Please click on vote now button & vote for a good Idea, you can also see the previous voting results by clicking on the results button. 🎉';
+    // this.notificationText = 'Please hit the button below to see the Results. 🎉';
   }
 
   private showSpalshScreen() {
@@ -78,6 +80,14 @@ export class HomePageComponent implements OnInit {
   public yesIwant() {
     this.userClickYes = true;
     localStorage.setItem('yesClicked', 'true');
+  }
+
+  goToVoting() {
+    window.location.href = 'https://nl.surveymonkey.com/r/5VNVMCS';
+  }
+
+  goToResults() {
+    this.router.navigateByUrl('results');
   }
 
   scrollTo(className: string): void {

@@ -21,8 +21,8 @@
       <div class="col-md-12 notification">
           {{ notificationText }}
         <br>
-        <!-- <a class="btn btn-default link-button" href="https://nl.surveymonkey.com/r/WDTZTND">Vote</a> -->
-        <a class="btn btn-default link-button" routerLink="/results">Results</a>
+        <button class="btn btn-default link-button" id="votingButton" type="button" (click)="goToVoting()" style="margin-right: 18px;">Vote Now</button>
+        <button class="btn btn-default link-button" id="resultButton" type="button" (click)="goToResults()">Results</button>
       </div>
     <div class="row" *ngIf="!userClickYes">
       <div class="col-md-12 no-padding">
